@@ -1,0 +1,144 @@
+{
+  "brand_identity": {
+    "name": "Canopi",
+    "essence": "Predictive Intelligence for Reforestation",
+    "tone": "Professional, Technical, Confident, Grounded, Future-Forward",
+    "aesthetic": "Atmospheric, Intelligent, Minimalist Soft Futurism",
+    "core_philosophy": "Digital Earth - Fusion of organic warmth and data precision"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Poppins, sans-serif",
+      "body": "Poppins, sans-serif"
+    },
+    "weights": {
+      "headings": "500",
+      "body": "400",
+      "bold": "600"
+    },
+    "styles": {
+      "h1": "text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] text-primary",
+      "h2": "text-4xl md:text-5xl font-medium tracking-tight text-primary mb-6",
+      "h3": "text-2xl md:text-3xl font-medium tracking-tight text-primary",
+      "body_lg": "text-lg md:text-xl font-normal leading-relaxed text-primary/80",
+      "body": "text-base font-normal leading-relaxed text-primary/70",
+      "caption": "text-sm font-medium tracking-widest uppercase text-primary/60",
+      "nav": "text-sm font-medium tracking-wide text-primary hover:text-primary/70 transition-colors"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#274E3B",
+      "secondary": "#94A991",
+      "accent": "#A7C2D8",
+      "background": "#D8C3A5",
+      "surface": "#E6D5BC",
+      "border": "#274E3B"
+    },
+    "usage": {
+      "background": "bg-[#D8C3A5]",
+      "text_main": "text-[#274E3B]",
+      "text_muted": "text-[#274E3B]/70",
+      "card_bg": "bg-[#D8C3A5] or bg-[#94A991]/10",
+      "primary_button": "bg-[#274E3B] text-[#D8C3A5] hover:bg-[#1A3528]",
+      "secondary_button": "border border-[#274E3B] text-[#274E3B] hover:bg-[#274E3B] hover:text-[#D8C3A5]",
+      "accent_gradient": "from-[#274E3B] to-[#94A991]"
+    }
+  },
+  "layout": {
+    "spacing_scale": {
+      "section_padding": "py-24 md:py-32",
+      "element_gap": "gap-8 md:gap-12",
+      "container_padding": "px-6 md:px-12"
+    },
+    "grid_system": {
+      "bento_marketing": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "features_row": "grid grid-cols-1 md:grid-cols-3 gap-8"
+    },
+    "max_width": "max-w-7xl mx-auto"
+  },
+  "visual_enhancers": {
+    "gradients": {
+      "atmospheric": "bg-gradient-to-b from-[#D8C3A5] via-[#E6D5BC] to-[#D8C3A5]",
+      "data_glow": "bg-gradient-to-tr from-[#94A991]/20 to-[#A7C2D8]/20"
+    },
+    "patterns": {
+      "dotted_network": "radial-gradient(#274E3B 1px, transparent 1px) [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,transparent,black_40%,black_70%,transparent)] opacity-20",
+      "topographic_lines": "Use SVG paths with stroke-[#274E3B] opacity-10 no-fill"
+    },
+    "shadows": {
+      "soft": "shadow-[0_8px_30px_rgb(39,78,59,0.06)]",
+      "card_hover": "shadow-[0_8px_30px_rgb(39,78,59,0.12)]"
+    },
+    "borders": {
+      "subtle": "border border-[#274E3B]/10",
+      "focus": "ring-2 ring-[#274E3B] ring-offset-2 ring-offset-[#D8C3A5]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-full px-8 py-4 font-medium transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0",
+      "secondary": "rounded-full px-8 py-4 font-medium transition-all duration-300 backdrop-blur-sm"
+    },
+    "cards": {
+      "feature": "bg-[#D8C3A5] border border-[#274E3B]/10 p-8 rounded-2xl hover:border-[#274E3B]/30 transition-colors duration-300",
+      "glass": "bg-[#D8C3A5]/60 backdrop-blur-md border border-[#274E3B]/10"
+    },
+    "inputs": {
+      "default": "bg-transparent border-b border-[#274E3B]/30 px-0 py-3 text-[#274E3B] placeholder:text-[#274E3B]/40 focus:outline-none focus:border-[#274E3B] transition-colors rounded-none w-full"
+    }
+  },
+  "sections_guide": {
+    "hero": {
+      "strategy": "Atmospheric entry. Use the dotted network pattern in the background. Large, confident headline. Two-column layout on desktop: Left=Copy, Right=Abstract Data Viz (CSS/SVG only).",
+      "elements": ["H1 Headline", "Subheadline", "Primary CTA (Get Started)", "Secondary CTA (Learn More)", "Abstract Network Visual"]
+    },
+    "problem": {
+      "strategy": "High contrast. Darker background (e.g., #274E3B text on #D8C3A5, or a card with #94A991 bg). Focus on the 'Blind Spots' in current reforestation.",
+      "layout": "Centered headline, 3-column grid of pain points."
+    },
+    "solution": {
+      "strategy": "Time Horizon Cards. 3 Cards representing Now, Near Future, Distant Future. Use 'Mist Blue' accents here to signify 'Prediction'.",
+      "layout": "Horizontal scroll on mobile, Grid on desktop."
+    },
+    "how_it_works": {
+      "strategy": "Process Flow. Connected steps. Use a dashed SVG line connecting 3 iconic steps.",
+      "layout": "Step-by-step vertical or horizontal flow."
+    },
+    "audience": {
+      "strategy": "Bento Grid. 2 Main cards (Project Managers vs Investors).",
+      "layout": "2-column split."
+    },
+    "why_now": {
+      "strategy": "Urgency. Use a data-heavy aesthetic (heatmap style gradient).",
+      "layout": "Feature list or single powerful statement."
+    },
+    "founder": {
+      "strategy": "Intimacy. Clean typography, signature style. No photo provided, so use a stylized quote or abstract avatar.",
+      "layout": "Text-heavy, editorial style."
+    },
+    "waitlist": {
+      "strategy": "Minimalist form. Single field (Email) + Submit. Clean lines.",
+      "layout": "Centered, high focus."
+    }
+  },
+  "motion": {
+    "type": "Subtle, CSS-only",
+    "classes": {
+      "fade_in": "animate-in fade-in duration-700 slide-in-from-bottom-4",
+      "hover_lift": "transition-transform duration-300 hover:-translate-y-1",
+      "pulse_slow": "animate-pulse duration-[3000ms]"
+    }
+  },
+  "universal_guidelines": [
+    "Do NOT use stock photos.",
+    "Do NOT use heavy solid backgrounds for main sections unless necessary for contrast.",
+    "Use '#D8C3A5' (Sand Clay) as the primary background color.",
+    "Use '#274E3B' (Deep Forest Green) for all primary text.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Maintain generous whitespace (py-24+).",
+    "Use SVG patterns (dots, lines) to add texture without images.",
+    "Font: Poppins for EVERYTHING. 500 weight for heads, 400 for body."
+  ],
+  "instructions_to_main_agent": "You are building a single-file React landing page. Use the provided colors and typography strictly. The background should be Sand Clay (#D8C3A5). Create a visual hierarchy using font size and spacing. Use the 'lucide-react' library for icons. For the 'Abstract Data Viz' in the Hero, create a custom SVG component with moving dots or lines using CSS animations."
+}

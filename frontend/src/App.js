@@ -48,7 +48,7 @@ const CanopiLogo = ({ light = false }) => {
    HERO VISUALIZATION — Abstract Data Network
    ======================================================== */
 const HeroViz = () => {
-  const fc = "#274E3B";
+  const fc = "#D8C3A5";
   const sc = "#94A991";
   const mc = "#A7C2D8";
   return (
@@ -174,7 +174,7 @@ const Navbar = () => {
             data-testid="navbar-logo"
             aria-label="Scroll to top"
           >
-            <CanopiLogo />
+            <CanopiLogo light={!scrolled} />
             <span>Canopi</span>
           </button>
 

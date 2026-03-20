@@ -21,8 +21,8 @@ img {
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 /* --- Layout Container --- */
@@ -41,17 +41,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Section Base --- */
 .canopi-section {
-  padding: 96px 0;
+  padding: 112px 0;
 }
 
 @media (min-width: 768px) {
   .canopi-section {
-    padding: 128px 0;
+    padding: 160px 0;
   }
 }
 
 .canopi-section--dark {
-  background-color: var(--canopi-forest);
+  background-color: var(--canopi-dark-bg);
   color: var(--canopi-sand);
 }
 
@@ -340,21 +340,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__title {
-  font-size: 2.5rem;
-  line-height: 1.08;
+  font-size: 2.75rem;
+  line-height: 1.05;
   margin-bottom: 24px;
   color: var(--canopi-sand);
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 @media (min-width: 768px) {
   .hero__title {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero__title {
-    font-size: 4rem;
+    font-size: 4.75rem;
   }
 }
 
@@ -413,14 +415,14 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   padding: 14px 32px;
   border-radius: 100px;
-  border: 1.5px solid rgba(216, 195, 165, 0.35);
+  border: 1.5px solid rgba(204, 186, 156, 0.35);
   cursor: pointer;
   transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-secondary:hover {
   border-color: rgba(216, 195, 165, 0.6);
-  background-color: rgba(216, 195, 165, 0.08);
+  background-color: rgba(204, 186, 156, 0.08);
   transform: translateY(-2px);
 }
 

@@ -15,30 +15,29 @@ import {
    LOGO — Dotted Signal Network "C"
    ======================================================== */
 const CanopiLogo = ({ light = false }) => {
-  const c = light ? "#D8C3A5" : "#274E3B";
+  const c = light ? "#CCBA9C" : "#1C3D2C";
   return (
     <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <circle cx="34" cy="8" r="2.2" fill={c} />
-      <circle cx="24" cy="5" r="2.5" fill={c} />
-      <circle cx="14" cy="8" r="2.2" fill={c} opacity="0.7" />
-      <circle cx="7" cy="16" r="2.5" fill={c} />
-      <circle cx="5" cy="24" r="2.2" fill={c} opacity="0.7" />
-      <circle cx="7" cy="32" r="2.5" fill={c} />
-      <circle cx="14" cy="40" r="2.2" fill={c} opacity="0.7" />
-      <circle cx="24" cy="43" r="2.5" fill={c} />
-      <circle cx="34" cy="40" r="2.2" fill={c} />
-      <line x1="34" y1="8" x2="24" y2="5" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="24" y1="5" x2="14" y2="8" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="14" y1="8" x2="7" y2="16" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="7" y1="16" x2="5" y2="24" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="5" y1="24" x2="7" y2="32" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="7" y1="32" x2="14" y2="40" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="14" y1="40" x2="24" y2="43" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <line x1="24" y1="43" x2="34" y2="40" stroke={c} strokeWidth="0.6" strokeDasharray="2 2" opacity="0.3" />
-      <circle cx="20" cy="22" r="1.5" fill={c} opacity="0.25" />
-      <circle cx="15" cy="24" r="1" fill={c} opacity="0.15" />
-      <line x1="7" y1="16" x2="20" y2="22" stroke={c} strokeWidth="0.4" strokeDasharray="1.5 2" opacity="0.15" />
-      <line x1="20" y1="22" x2="34" y2="8" stroke={c} strokeWidth="0.4" strokeDasharray="1.5 2" opacity="0.15" />
+      {/* Outer C-arc — 9 dots from upper-right to lower-right, opening on the right */}
+      <circle cx="32" cy="9"  r="3"   fill={c} />
+      <circle cx="24" cy="7"  r="2.5" fill={c} />
+      <circle cx="15" cy="9"  r="2.5" fill={c} />
+      <circle cx="9"  cy="15" r="2.5" fill={c} opacity="0.85" />
+      <circle cx="7"  cy="24" r="3"   fill={c} />
+      <circle cx="9"  cy="33" r="2.5" fill={c} opacity="0.85" />
+      <circle cx="16" cy="39" r="2.5" fill={c} />
+      <circle cx="24" cy="41" r="2.5" fill={c} />
+      <circle cx="32" cy="39" r="3"   fill={c} />
+      {/* Inner signal network dots */}
+      <circle cx="18" cy="19" r="1.8" fill={c} opacity="0.6" />
+      <circle cx="17" cy="29" r="1.8" fill={c} opacity="0.6" />
+      <circle cx="22" cy="24" r="1.4" fill={c} opacity="0.35" />
+      {/* Signal connections */}
+      <line x1="7"  y1="24" x2="18" y2="19" stroke={c} strokeWidth="0.7" strokeDasharray="2 2" opacity="0.4" />
+      <line x1="18" y1="19" x2="17" y2="29" stroke={c} strokeWidth="0.7" strokeDasharray="2 2" opacity="0.35" />
+      <line x1="17" y1="29" x2="7"  y2="24" stroke={c} strokeWidth="0.5" strokeDasharray="2 2" opacity="0.2" />
+      <line x1="18" y1="19" x2="22" y2="24" stroke={c} strokeWidth="0.5" strokeDasharray="1.5 2" opacity="0.25" />
+      <line x1="22" y1="24" x2="17" y2="29" stroke={c} strokeWidth="0.5" strokeDasharray="1.5 2" opacity="0.25" />
     </svg>
   );
 };
@@ -47,9 +46,9 @@ const CanopiLogo = ({ light = false }) => {
    HERO VISUALIZATION — Abstract Data Network
    ======================================================== */
 const HeroViz = () => {
-  const fc = "#D8C3A5";
-  const sc = "#94A991";
-  const mc = "#A7C2D8";
+  const fc = "#CCBA9C";
+  const sc = "#6F8F75";
+  const mc = "#8BAFC2";
   return (
     <svg viewBox="0 0 500 500" className="hero-viz-svg" aria-hidden="true">
       {/* Concentric contour rings */}
@@ -259,13 +258,14 @@ const Hero = () => (
     <div className="hero__bg-pattern" aria-hidden="true" />
     <div className="canopi-container hero__inner">
       <div className="hero__content">
-        <p className="hero__tagline reveal">Predict. Protect. Regrow.</p>
+        <p className="hero__tagline reveal">Where forests meet intelligence.</p>
         <h1 className="hero__title reveal reveal-d1" data-testid="hero-title">
-          Predictive Intelligence for Reforestation
+          See risk before it takes root.
         </h1>
         <p className="hero__subtitle reveal reveal-d2">
-          Canopi forecasts survival risk from 30 days to 5 years — so
-          reforestation teams can intervene before plots fail, not after.
+          The intelligence layer powering reforestation. Canopi forecasts
+          survival risk from 30 days to 5 years — so teams can intervene
+          before plots fail, not after.
         </p>
         <div className="hero__actions reveal reveal-d3">
           <button

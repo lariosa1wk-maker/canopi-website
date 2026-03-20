@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --canopi-forest: #274E3B;
-  --canopi-forest-light: #3A6B52;
-  --canopi-forest-dark: #1A3528;
-  --canopi-sage: #94A991;
-  --canopi-mist: #A7C2D8;
-  --canopi-sand: #D8C3A5;
-  --canopi-sand-light: #E6D5BC;
-  --canopi-sand-pale: #EDE0CE;
+  --canopi-forest: #1C3D2C;
+  --canopi-forest-light: #2D5C40;
+  --canopi-forest-dark: #0F2018;
+  --canopi-dark-bg: #101A13;
+  --canopi-sage: #6F8F75;
+  --canopi-mist: #8BAFC2;
+  --canopi-sand: #CCBA9C;
+  --canopi-sand-light: #DACBA9;
+  --canopi-sand-pale: #E8D9C4;
 
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;

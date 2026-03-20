@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 10px;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--canopi-sand);
   cursor: pointer;
@@ -279,21 +279,21 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   padding-top: 80px;
-  background-image: url('https://images.unsplash.com/photo-1768070841554-eae3f3bda452?w=1920&q=80&auto=format&fit=crop');
+  background-image: url('./forest-bg.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 35%;
 }
 
-/* Dark green overlay on hero image */
+/* Dark overlay on hero image */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    165deg,
-    rgba(26, 53, 40, 0.92) 0%,
-    rgba(39, 78, 59, 0.82) 50%,
-    rgba(39, 78, 59, 0.75) 100%
+    to right,
+    rgba(8, 26, 16, 0.96) 0%,
+    rgba(18, 52, 33, 0.88) 45%,
+    rgba(22, 58, 38, 0.70) 100%
   );
   z-index: 1;
 }
@@ -1044,18 +1044,67 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto 40px;
 }
 
+.waitlist__tabs {
+  display: inline-flex;
+  background: rgba(216, 195, 165, 0.08);
+  border: 1px solid rgba(216, 195, 165, 0.15);
+  border-radius: 100px;
+  padding: 4px;
+  margin-bottom: 28px;
+  gap: 4px;
+}
+
+.waitlist__tab {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(216, 195, 165, 0.55);
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.waitlist__tab--active {
+  background: var(--canopi-sand);
+  color: var(--canopi-forest);
+}
+
 .waitlist__form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 420px;
+  max-width: 480px;
   margin: 0 auto 24px;
 }
 
+.waitlist__input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 @media (min-width: 480px) {
-  .waitlist__form {
+  .waitlist__input-row {
     flex-direction: row;
   }
+}
+
+.waitlist__select {
+  border-radius: 12px !important;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(216,195,165,0.5)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 44px !important;
+}
+
+.waitlist__select option {
+  background: #1a3528;
+  color: var(--canopi-sand);
 }
 
 .waitlist__input {

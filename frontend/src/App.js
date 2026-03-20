@@ -9,8 +9,7 @@ import {
   Menu, X, ExternalLink
 } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+
 
 /* ========================================================
    LOGO — Dotted Signal Network "C"
@@ -18,7 +17,7 @@ const API = `${BACKEND_URL}/api`;
 const CanopiLogo = ({ light = false }) => {
   const c = light ? "#D8C3A5" : "#274E3B";
   return (
-    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
       <circle cx="34" cy="8" r="2.2" fill={c} />
       <circle cx="24" cy="5" r="2.5" fill={c} />
       <circle cx="14" cy="8" r="2.2" fill={c} opacity="0.7" />
@@ -591,12 +590,14 @@ const Founder = () => (
           Ana Gabriela Larios
         </h2>
         <p className="founder__bio reveal reveal-d2">
-          8 years building autonomous systems and edge AI products for harsh,
-          GPS-denied environments. Built LAVA, a maritime autonomy platform for
-          real-time decision-making in ocean environments, and Navigate, an edge
-          AI navigation product for infrastructure-poor settings. The
-          reforestation industry needs the same predictive layer — different
-          domain, same technical challenge.
+          8 years of experience building autonomous systems and edge AI products
+          — predictive analytics and data intelligence for harsh, remote,
+          connectivity-limited environments. Previous work includes a maritime
+          autonomy platform for real-time sensor-driven decision-making and an
+          edge AI navigation system for GPS-denied operations. Canopi applies
+          the same technical foundation to reforestation: turning multi-source
+          environmental data into actionable foresight. Currently building
+          partnerships across the sector.
         </p>
         <a
           href="https://www.linkedin.com/in/ana-gabriela-larios"
@@ -616,23 +617,41 @@ const Founder = () => (
 /* ========================================================
    WAITLIST
    ======================================================== */
+const FORMSPREE_ID = "mreyjwnd"; // Replace with your Formspree form ID from formspree.io
+
+const ROLES = [
+  "Reforestation partner",
+  "ML / data engineer",
+  "Climate investor",
+  "Researcher / scientist",
+  "Other",
+];
+
 const Waitlist = () => {
+  const [mode, setMode] = useState("follow"); // "follow" | "involve"
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [role, setRole] = useState("");
+  const [status, setStatus] = useState("idle");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !email.includes("@")) return;
+    if (mode === "involve" && !role) return;
     setStatus("sending");
     try {
-      const res = await fetch(`${API}/waitlist`, {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          intent: mode === "follow" ? "Following progress" : "Get involved",
+          ...(mode === "involve" && { role }),
+        }),
       });
       if (res.ok) {
         setStatus("success");
         setEmail("");
+        setRole("");
       } else {
         setStatus("error");
       }
@@ -649,58 +668,97 @@ const Waitlist = () => {
     >
       <div className="canopi-container">
         <p className="section-label section-label--light reveal">
-          Early Access
+          Get Involved
         </p>
         <h2 className="waitlist__title reveal reveal-d1" data-testid="waitlist-title">
-          Get early access to Canopi
+          Stay connected with Canopi
         </h2>
         <p className="waitlist__text reveal reveal-d2">
-          Canopi is currently in development as part of a Climatebase cohort.
-          We&apos;re looking for reforestation partners, ML engineers, and
-          climate data experts.
+          Whether you want to follow our progress or actively help shape what
+          we&apos;re building — we&apos;d love to hear from you.
         </p>
 
         {status === "success" ? (
           <div className="waitlist__success reveal" data-testid="waitlist-success">
-            You&apos;re on the list. We&apos;ll be in touch.
+            {mode === "follow"
+              ? "You're on the list. We'll keep you posted."
+              : "Thanks for reaching out. We'll be in touch soon."}
           </div>
         ) : (
-          <form
-            className="waitlist__form reveal reveal-d3"
-            onSubmit={handleSubmit}
-            data-testid="waitlist-form"
-          >
-            <input
-              type="email"
-              className="waitlist__input"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-label="Email address"
-              data-testid="waitlist-email-input"
-            />
-            <button
-              type="submit"
-              className="waitlist__submit"
-              disabled={status === "sending"}
-              data-testid="waitlist-submit-btn"
+          <>
+            <div className="waitlist__tabs reveal reveal-d2">
+              <button
+                type="button"
+                className={`waitlist__tab${mode === "follow" ? " waitlist__tab--active" : ""}`}
+                onClick={() => setMode("follow")}
+              >
+                Follow our progress
+              </button>
+              <button
+                type="button"
+                className={`waitlist__tab${mode === "involve" ? " waitlist__tab--active" : ""}`}
+                onClick={() => setMode("involve")}
+              >
+                Get involved
+              </button>
+            </div>
+
+            <form
+              className="waitlist__form reveal reveal-d3"
+              onSubmit={handleSubmit}
+              data-testid="waitlist-form"
             >
-              {status === "sending" ? "Sending..." : "Join Waitlist"}
-            </button>
-          </form>
-        )}
+              {mode === "involve" && (
+                <select
+                  className="waitlist__input waitlist__select"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                  required
+                  aria-label="How you'd like to help"
+                >
+                  <option value="" disabled>How would you like to help?</option>
+                  {ROLES.map((r) => (
+                    <option key={r} value={r}>{r}</option>
+                  ))}
+                </select>
+              )}
+              <div className="waitlist__input-row">
+                <input
+                  type="email"
+                  className="waitlist__input"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  aria-label="Email address"
+                  data-testid="waitlist-email-input"
+                />
+                <button
+                  type="submit"
+                  className="waitlist__submit"
+                  disabled={status === "sending"}
+                  data-testid="waitlist-submit-btn"
+                >
+                  {status === "sending" ? "Sending..." : mode === "follow" ? "Stay updated" : "Reach out"}
+                </button>
+              </div>
+            </form>
 
-        {status === "error" && (
-          <p className="waitlist__note reveal" style={{ color: "#E6A5A5" }}>
-            Something went wrong. Please try again or email us directly.
-          </p>
-        )}
+            {status === "error" && (
+              <p className="waitlist__note reveal" style={{ color: "#E6A5A5" }}>
+                Something went wrong. Try again or email{" "}
+                <a href="mailto:lariosa1.wk@gmail.com" style={{ color: "#E6A5A5" }}>
+                  lariosa1.wk@gmail.com
+                </a>{" "}
+                directly.
+              </p>
+            )}
 
-        <p className="waitlist__note reveal reveal-d4">
-          {/* Connect this form to Formspree, Mailchimp, or similar for production */}
-          No spam — just updates on our progress.
-        </p>
+            <p className="waitlist__note reveal reveal-d4">
+              No spam — just updates on our progress.
+            </p>
+          </>
+        )}
       </div>
     </section>
   );

@@ -6,7 +6,8 @@ import {
   Users, Coins,
   ArrowRight, ChevronDown,
   Linkedin, Github, Mail,
-  Menu, X, ExternalLink
+  Menu, X, ExternalLink,
+  Map, Layers, DollarSign, BellRing
 } from "lucide-react";
 
 
@@ -153,7 +154,7 @@ const Navbar = () => {
   const links = [
     { label: "Problem", id: "problem" },
     { label: "Solution", id: "solution" },
-    { label: "How It Works", id: "how-it-works" },
+    { label: "Platform", id: "platform" },
     { label: "About", id: "founder" },
   ];
 
@@ -258,14 +259,13 @@ const Hero = () => (
     <div className="hero__bg-pattern" aria-hidden="true" />
     <div className="canopi-container hero__inner">
       <div className="hero__content">
-        <p className="hero__tagline reveal">Where forests meet intelligence.</p>
+        <p className="hero__tagline reveal">Predict. Protect. Regrow.</p>
         <h1 className="hero__title reveal reveal-d1" data-testid="hero-title">
-          See risk before it takes root.
+          Predictive Intelligence for Reforestation
         </h1>
         <p className="hero__subtitle reveal reveal-d2">
-          The intelligence layer powering reforestation. Canopi forecasts
-          survival risk from 30 days to 5 years — so teams can intervene
-          before plots fail, not after.
+          Canopi forecasts survival risk from 30 days to 5 years, so
+          reforestation teams can intervene before plots fail, not after.
         </p>
         <div className="hero__actions reveal reveal-d3">
           <button
@@ -307,14 +307,19 @@ const Problem = () => (
       <p className="section-label section-label--light reveal">The Problem</p>
       <div className="problem__content">
         <h2 className="problem__title reveal reveal-d1">
-          Reforestation is flying blind
+          Reforestation monitoring tells you what already happened — not what&apos;s about to.
         </h2>
         <p className="problem__text reveal reveal-d2">
-          Projects span thousands of acres over years-long timescales, but
-          monitoring is fundamentally reactive. Survival issues are detected too
-          late — after trees have died, carbon credits are lost, and project
-          developers absorb the financial losses. There is no forward-looking
-          intelligence to protect investments.
+          Projects span thousands of acres over years-long timescales, but the
+          data pipeline is built around periodic snapshots, not continuous
+          intelligence. By the time satellite imagery or field audits flag
+          survival issues, trees have already died, carbon credits are already
+          at risk, and project developers are absorbing losses they
+          couldn&apos;t have predicted — or prevented.
+        </p>
+        <p className="problem__text reveal reveal-d2" style={{ marginTop: '1.25rem' }}>
+          There is no forward-looking layer connecting environmental signals to
+          intervention decisions.
         </p>
       </div>
       <div className="problem__stats">
@@ -323,7 +328,7 @@ const Problem = () => (
             <Clock size={22} />
           </div>
           <p className="problem__stat-label">
-            Check-ins months apart, separated by entire seasons
+            Check-ins months apart, separated by entire seasons or limited due to high costs.
           </p>
         </div>
         <div className="problem__stat reveal reveal-d2" data-testid="problem-stat-2">
@@ -331,8 +336,7 @@ const Problem = () => (
             <BarChart3 size={22} />
           </div>
           <p className="problem__stat-label">
-            Verification is backward-looking — underperforming plots fail before
-            anyone notices
+            Decline goes undetected, intervention comes too late, losses are already locked in.
           </p>
         </div>
         <div className="problem__stat reveal reveal-d3" data-testid="problem-stat-3">
@@ -341,7 +345,7 @@ const Problem = () => (
           </div>
           <p className="problem__stat-label">
             Carbon credits go unissued, project developers absorb losses,
-            credit buyers lose confidence
+            credit buyers lose confidence.
           </p>
         </div>
       </div>
@@ -358,21 +362,21 @@ const solutionCards = [
     iconClass: "solution-card__icon--near",
     horizon: "30–90 Days",
     title: "Near-Term Risk Alerts",
-    desc: "Identify at-risk plots before they fail. Enable targeted, immediate intervention to protect survival rates and save resources.",
+    desc: "See which plots are trending toward failure right now. The Explorer heatmap surfaces drought stress, soil conditions, and temperature anomalies, calibrated to planting method so teams can target intervention before the next audit, not after it.",
   },
   {
     icon: <CalendarRange size={22} />,
     iconClass: "solution-card__icon--seasonal",
     horizon: "Seasonal",
-    title: "Resource Allocation",
-    desc: "Assess how environmental shifts will affect survival over growing seasons. Prioritize where interventions matter most.",
+    title: "Species & Site Intelligence",
+    desc: "Assess how survival probability shifts across growing seasons by region. Identify which species and planting approaches are best suited to specific geographies, and where resources should be concentrated to protect the highest-value areas.",
   },
   {
     icon: <TrendingUp size={22} />,
     iconClass: "solution-card__icon--multi",
     horizon: "Up to 5 Years",
-    title: "Scenario Planning",
-    desc: "Model outcomes under different climate conditions. Inform species selection, site prep, and long-range strategy tied to carbon revenue.",
+    title: "Carbon Credit Exposure",
+    desc: "Model how survival trajectories translate into credits at risk and revenue impact. See how planting method, climate scenarios, and carbon pricing shape long-range outcomes so strategy is tied to financial reality, not assumptions.",
   },
 ];
 
@@ -389,8 +393,10 @@ const Solution = () => (
           Prediction is the missing layer
         </h2>
         <p className="solution__subtitle reveal reveal-d2">
-          Canopi delivers forward-looking intelligence across three time
-          horizons — from immediate triage to multi-year planning.
+          Canopi forecasts survival risk across three time horizons —
+          calibrated to species, site conditions, and how trees were planted.
+          Whether plots were hand-planted or drone-seeded, predictions reflect
+          the survival dynamics that actually apply.
         </p>
       </div>
       <div className="solution__cards">
@@ -406,6 +412,82 @@ const Solution = () => (
             <p className="solution-card__horizon">{card.horizon}</p>
             <h3 className="solution-card__title">{card.title}</h3>
             <p className="solution-card__desc">{card.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ========================================================
+   PLATFORM
+   ======================================================== */
+const platformFeatures = [
+  {
+    icon: <Map size={24} />,
+    iconClass: "platform-card__icon--explorer",
+    title: "Explorer",
+    desc: "A full-screen survival heatmap across all plots and time horizons. Filter by species, slide through 30 days to 5 years, and click any area for a ranked breakdown of risk factors.",
+    stretch: false,
+  },
+  {
+    icon: <Layers size={24} />,
+    iconClass: "platform-card__icon--region",
+    title: "Region",
+    desc: "Select a state, county, or custom boundary to see aggregated survival forecasts, top-performing species, and the environmental profile of your target planting area.",
+    stretch: false,
+  },
+  {
+    icon: <DollarSign size={24} />,
+    iconClass: "platform-card__icon--report",
+    title: "Report",
+    desc: "Translate survival predictions into financial terms — estimated carbon credits generated, credits at risk, revenue exposure, and the ROI case for intervention before it's too late.",
+    stretch: false,
+  },
+  {
+    icon: <BellRing size={24} />,
+    iconClass: "platform-card__icon--alerts",
+    title: "Intervention Alerts",
+    desc: "Proactive, deadline-driven alerts: which plots are declining, when you need to act, and exactly how many credits you recover if you do — turning Canopi from a dashboard into a decision system.",
+    stretch: true,
+  },
+];
+
+const Platform = () => (
+  <section
+    id="platform"
+    className="canopi-section canopi-section--dark"
+    data-testid="platform-section"
+  >
+    <div className="canopi-container">
+      <div className="platform__header">
+        <p className="section-label reveal">The Platform</p>
+        <h2 className="platform__title reveal reveal-d1">
+          Four views. One mission.
+        </h2>
+        <p className="platform__subtitle reveal reveal-d2">
+          Every view is designed around a single question reforestation teams
+          actually need to answer.
+        </p>
+      </div>
+      <div className="platform__grid">
+        {platformFeatures.map((f, i) => (
+          <div
+            key={f.title}
+            className={`platform-card reveal reveal-d${i + 1}${f.stretch ? " platform-card--stretch" : ""}`}
+            data-testid={`platform-card-${i}`}
+          >
+            <div className="platform-card__top">
+              <div className={`platform-card__icon ${f.iconClass}`}>
+                {f.icon}
+              </div>
+              <span className="platform-card__label">{f.label}</span>
+            </div>
+            <h3 className="platform-card__title">{f.title}</h3>
+            <p className="platform-card__desc">{f.desc}</p>
+            {f.stretch && (
+              <span className="platform-card__badge">Coming Soon</span>
+            )}
           </div>
         ))}
       </div>
@@ -587,17 +669,11 @@ const Founder = () => (
       <div>
         <p className="founder__label reveal">About the Founder</p>
         <h2 className="founder__name reveal reveal-d1" data-testid="founder-name">
-          Ana Gabriela Larios
+          Gabby Larios
         </h2>
         <p className="founder__bio reveal reveal-d2">
-          8 years of experience building autonomous systems and edge AI products
-          — predictive analytics and data intelligence for harsh, remote,
-          connectivity-limited environments. Previous work includes a maritime
-          autonomy platform for real-time sensor-driven decision-making and an
-          edge AI navigation system for GPS-denied operations. Canopi applies
-          the same technical foundation to reforestation: turning multi-source
-          environmental data into actionable foresight. Currently building
-          partnerships across the sector.
+          Gabby has spent nearly a decade building predictive intelligence systems for some of the hardest operating environments — autonomous maritime platforms processing real-time sensor data, edge AI navigation where GPS doesn't exist, and computer vision tools deployed at the edge of connectivity.
+Reforestation has been a parallel passion for years. Canopi is where the two converge.
         </p>
         <a
           href="https://www.linkedin.com/in/ana-gabriela-larios"
@@ -823,6 +899,7 @@ function App() {
         <Hero />
         <Problem />
         <Solution />
+        <Platform />
         <HowItWorks />
         <Audience />
         <WhyNow />

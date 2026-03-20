@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="10" fill="#1C3D2C"/>
+  <circle cx="32" cy="9"  r="3"   fill="#CCBA9C"/>
+  <circle cx="24" cy="7"  r="2.5" fill="#CCBA9C"/>
+  <circle cx="15" cy="9"  r="2.5" fill="#CCBA9C"/>
+  <circle cx="9"  cy="15" r="2.5" fill="#CCBA9C" opacity="0.85"/>
+  <circle cx="7"  cy="24" r="3"   fill="#CCBA9C"/>
+  <circle cx="9"  cy="33" r="2.5" fill="#CCBA9C" opacity="0.85"/>
+  <circle cx="16" cy="39" r="2.5" fill="#CCBA9C"/>
+  <circle cx="24" cy="41" r="2.5" fill="#CCBA9C"/>
+  <circle cx="32" cy="39" r="3"   fill="#CCBA9C"/>
+  <circle cx="18" cy="19" r="1.8" fill="#CCBA9C" opacity="0.6"/>
+  <circle cx="17" cy="29" r="1.8" fill="#CCBA9C" opacity="0.6"/>
+  <circle cx="22" cy="24" r="1.4" fill="#CCBA9C" opacity="0.35"/>
+  <line x1="7"  y1="24" x2="18" y2="19" stroke="#CCBA9C" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.4"/>
+  <line x1="18" y1="19" x2="17" y2="29" stroke="#CCBA9C" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.35"/>
+  <line x1="17" y1="29" x2="7"  y2="24" stroke="#CCBA9C" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.2"/>
+  <line x1="18" y1="19" x2="22" y2="24" stroke="#CCBA9C" stroke-width="0.5" stroke-dasharray="1.5 2" opacity="0.25"/>
+  <line x1="22" y1="24" x2="17" y2="29" stroke="#CCBA9C" stroke-width="0.5" stroke-dasharray="1.5 2" opacity="0.25"/>
+</svg>
